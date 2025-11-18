@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="title">启动日志</view>
+  <view wx:if="{{logs && logs.length}}">
+    <block wx:for="{{logs}}" wx:key="index">
+      <view class="log-item">{{item}}</view>
+    </block>
+  </view>
+  <view wx:else class="empty">暂无日志</view>
+</view>

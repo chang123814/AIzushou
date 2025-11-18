@@ -1,0 +1,60 @@
+{
+  "compileType": "miniprogram",
+  "libVersion": "3.11.2",
+  "packOptions": {
+    "ignore": [
+      {
+        "value": "docs/**",
+        "type": "glob"
+      },
+      {
+        "value": "scripts/**",
+        "type": "glob"
+      },
+      {
+        "value": "mcp_servers/**",
+        "type": "glob"
+      },
+      {
+        "value": "**/*.py",
+        "type": "glob"
+      }
+    ],
+    "include": []
+  },
+  "setting": {
+    "coverView": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "enhance": false,
+    "showShadowRootInWxmlPanel": false,
+    "packNpmRelationList": [],
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "compileWorklet": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "packNpmManually": false,
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "localPlugins": false,
+    "condition": false,
+    "swc": false,
+    "disableSWC": true,
+    "disableUseStrict": false,
+    "useCompilerPlugins": false
+  },
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "auto",
+    "tabSize": 2
+  },
+  "appid": "wx766b73af56ba849d",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionRoot": "cloudfunctions/",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/"
+}

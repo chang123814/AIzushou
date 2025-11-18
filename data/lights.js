@@ -1,0 +1,22 @@
+module.exports = [
+  { name_en: "cool light", name_zh: "冷光" },
+  { name_en: "mood lighting", name_zh: "情绪照明" },
+  { name_en: "bright", name_zh: "明亮的" },
+  { name_en: "soft lighting", name_zh: "柔和的照明" },
+  { name_en: "fluorescent lighting", name_zh: "荧光灯" },
+  { name_en: "neon lighting", name_zh: "霓虹灯" },
+  { name_en: "studio lighting", name_zh: "工作室灯光" },
+  { name_en: "cinematic lighting", name_zh: "电影级别照明" },
+  { name_en: "dusk rays", name_zh: "黄昏射线" },
+  { name_en: "film lighting", name_zh: "电影灯光" },
+  { name_en: "dramatic lighting", name_zh: "戏剧灯光" },
+  { name_en: "Rembrandt lighting", name_zh: "伦勃朗照明" },
+  { name_en: "bi-lighting", name_zh: "双性照明" },
+  { name_en: "split lighting", name_zh: "分体照明" },
+  { name_en: "front lighting", name_zh: "前灯" },
+  { name_en: "backlighting", name_zh: "背光" },
+  { name_en: "clean lighting", name_zh: "干净的" },
+  { name_en: "rim light", name_zh: "边缘灯" },
+  { name_en: "global illumination", name_zh: "全局照明" },
+  { name_en: "strong light", name_zh: "强光" }
+];

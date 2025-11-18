@@ -1,0 +1,19 @@
+.container {
+  padding: 24rpx;
+  color: #333;
+}
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.log-item {
+  padding: 16rpx 12rpx;
+  border: 1px solid #eee;
+  border-radius: 8rpx;
+  margin-bottom: 12rpx;
+  background: #fafafa;
+}
+.empty {
+  color: #999;
+}

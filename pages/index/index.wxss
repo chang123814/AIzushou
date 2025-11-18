@@ -1,0 +1,99 @@
+/* pages/index/index.wxss */
+.container {
+  padding: 20rpx;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+}
+
+.main-area {
+  margin-bottom: 30rpx;
+}
+
+.prompt-input {
+  width: 100%;
+  height: 180rpx;
+  padding: 20rpx;
+  border: 1px solid #ddd;
+  border-radius: 8rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  line-height: 1.5;
+  margin-bottom: 20rpx;
+}
+
+.copy-btn {
+  width: 100%;
+  font-size: 32rpx;
+  background-color: #07c160;
+  color: white;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+/* [逻辑重构] 中英文预览区样式 */
+.preview-wrapper {
+  /* display: flex; 改为默认的块级布局，实现上下排列 */
+  gap: 20rpx;
+  margin-top: 20rpx;
+}
+
+.preview-box {
+  flex: 1;
+  padding: 15rpx;
+  background-color: #f7f7f7;
+  border-radius: 4rpx;
+  min-height: 100rpx;
+}
+
+.preview-title {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 10rpx;
+  font-weight: bold;
+}
+
+.preview-content {
+  font-size: 26rpx;
+  color: #333;
+  word-wrap: break-word;
+}
+
+.category-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20rpx;
+}
+
+.category-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+  padding-left: 10rpx;
+}
+
+.picker {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 20rpx;
+  border: 1px solid #ddd;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+  text-align: left;
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Remove button default styles */
+button::after {
+  border: none;
+}
+
+.translate-status {
+  margin-top: 12rpx;
+  color: #666;
+  font-size: 26rpx;
+}

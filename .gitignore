@@ -1,0 +1,23 @@
+# Node & Mini Program
+node_modules/
+cloudfunctions/**/node_modules/
+package-lock.json
+cloudfunctions/**/package-lock.json
+
+# Build outputs / cache
+/miniprogram_npm/
+/dist/
+/.cache/
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Private configs (keep locally only)
+project.private.config.json
+
+# Python virtual env (if any)
+.venv/
+venv/
+__pycache__/
