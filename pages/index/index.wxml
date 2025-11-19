@@ -1,36 +1,51 @@
 <!--pages/index/index.wxml-->
+<image class="top-background-image" src="/pages/index/images/top_background.jpeg" mode="aspectFill"></image>
 <view class="container">
-  <!-- 主输入和操作区 -->
-  <view class="main-area">
-    <textarea class="prompt-input" value="{{subject}}" bindinput="handleSubjectInput" placeholder="在此输入主体与环境，例如：a cat in a forest"></textarea>
-    <button class="copy-btn" bindtap="copyPrompt" disabled="{{translating}}">复制英文提示词</button>
-    <button class="copy-btn" style="margin-top: 12rpx; background-color:#1c69d4;" bindtap="copyPromptZh" disabled="{{translating}}">复制中文提示词</button>
-
-    <view class="translate-status" wx:if="{{translating}}">🔄 正在翻译...</view>
-
-    <!-- [逻辑重构] 中英文预览区 -->
-    <view class="preview-wrapper" wx:if="{{prompt_en || prompt_zh}}">
-        <view class="preview-box">
-            <view class="preview-title">中文预览</view>
-            <view class="preview-content">{{prompt_zh}}</view>
-        </view>
-        <view class="preview-box">
-            <view class="preview-title">英文预览 (最终复制内容)</view>
-            <view class="preview-content">{{prompt_en}}</view>
-        </view>
+  <view class="page-wrapper">
+    <view class="hero-card">
+      <view class="hero-title">AI绘图提示词配置</view>
+      <view class="hero-subtitle">输入主体与环境，获取专业的中英文提示词</view>
     </view>
 
-  </view>
+    <view class="content-card">
+      <!-- 主输入和操作区 -->
+      <view class="main-area">
+        <textarea class="prompt-input" value="{{subject}}" bindinput="handleSubjectInput" placeholder="在此输入主体与环境，例如：a cat in a forest"></textarea>
+        <button class="copy-btn" bindtap="copyPrompt" disabled="{{translating}}">复制英文提示词</button>
+        <button class="copy-btn copy-btn-secondary" bindtap="copyPromptZh" disabled="{{translating}}">复制中文提示词</button>
 
-  <!-- 提示词分类 -->
-  <view class="category-section-grid" wx:if="{{pickerData && pickerData.mediums}}">
-    <view class="category" wx:for="{{categories}}" wx:key="key">
-      <view class="category-title">{{item.title}}</view>
-      <picker bindchange="handlePickerChange" data-category="{{item.key}}" value="{{selectedIndexes[item.key]}}" range="{{pickerData[item.key]}}" range-key="name_zh">
-        <view class="picker">
-          {{pickerData[item.key][selectedIndexes[item.key]].name_zh}}
+        <view class="translate-status" wx:if="{{translating}}">🔄 正在翻译...</view>
+
+        <!-- [逻辑重构] 中英文预览区 -->
+        <view class="preview-wrapper" wx:if="{{prompt_en || prompt_zh}}">
+            <view class="preview-box">
+                <view class="preview-title">中文预览</view>
+                <view class="preview-content">{{prompt_zh}}</view>
+            </view>
+            <view class="preview-box">
+                <view class="preview-title">英文预览 (最终复制内容)</view>
+                <view class="preview-content">{{prompt_en}}</view>
+            </view>
         </view>
-      </picker>
+      </view>
+
+      <view class="section-divider"></view>
+
+      <view class="section-header">
+        <text class="section-title">提示词分类</text>
+      </view>
+
+      <!-- 提示词分类 -->
+      <view class="category-section-grid" wx:if="{{pickerData && pickerData.mediums}}">
+        <view class="category" wx:for="{{categories}}" wx:key="key">
+          <view class="category-title">{{item.title}}</view>
+          <picker bindchange="handlePickerChange" data-category="{{item.key}}" value="{{selectedIndexes[item.key]}}" range="{{pickerData[item.key]}}" range-key="name_zh">
+            <view class="picker">
+              {{pickerData[item.key][selectedIndexes[item.key]].name_zh}}
+            </view>
+          </picker>
+        </view>
+      </view>
     </view>
   </view>
 </view>

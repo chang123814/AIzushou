@@ -1,48 +1,110 @@
 /* pages/index/index.wxss */
+/* pages/index/index.wxss */
+.top-background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 360rpx;
+  z-index: -1;
+  object-fit: cover;
+  filter: brightness(0.95);
+}
+
 .container {
-  padding: 20rpx;
+  padding: 40rpx 40rpx 80rpx;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: #333;
+  position: relative;
+  z-index: 0;
+  padding-top: 320rpx;
+}
+
+.page-wrapper {
+  width: 100%;
+  max-width: 700rpx;
+  margin: 0 auto;
+}
+
+.hero-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%);
+  border-radius: 24rpx;
+  padding: 36rpx 40rpx;
+  box-shadow: 0 20rpx 60rpx rgba(0, 0, 0, 0.08);
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.hero-title {
+  font-size: 42rpx;
+  font-weight: 700;
+  margin-bottom: 16rpx;
+  color: #1a1a1a;
+}
+
+.hero-subtitle {
+  font-size: 26rpx;
+  color: #577266;
+  line-height: 1.5;
+}
+
+.content-card {
+  background-color: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx 32rpx;
+  box-shadow: 0 20rpx 60rpx rgba(0, 0, 0, 0.08);
 }
 
 .main-area {
-  margin-bottom: 30rpx;
+  margin: 0 auto 40rpx;
+  max-width: 600rpx;
+  width: 100%;
 }
 
 .prompt-input {
   width: 100%;
-  height: 180rpx;
-  padding: 20rpx;
-  border: 1px solid #ddd;
-  border-radius: 8rpx;
-  background-color: #fff;
+  min-height: 200rpx;
+  padding: 24rpx;
+  border: 1px solid rgba(10, 123, 95, 0.2);
+  border-radius: 16rpx;
+  background-color: rgba(255, 255, 255, 0.9);
   box-sizing: border-box;
-  line-height: 1.5;
-  margin-bottom: 20rpx;
+  line-height: 1.6;
+  margin-bottom: 24rpx;
+  box-shadow: inset 0 8rpx 20rpx rgba(0, 0, 0, 0.04);
 }
 
 .copy-btn {
   width: 100%;
   font-size: 32rpx;
-  background-color: #07c160;
+  background: linear-gradient(135deg, #05c46b, #0e9f62);
   color: white;
   height: 90rpx;
   line-height: 90rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 10rpx 30rpx rgba(5, 196, 107, 0.3);
+}
+
+.copy-btn-secondary {
+  margin-top: 16rpx;
+  background: linear-gradient(135deg, #0f7cf0, #125bda);
+  box-shadow: 0 10rpx 30rpx rgba(18, 91, 218, 0.3);
 }
 
 /* [逻辑重构] 中英文预览区样式 */
 .preview-wrapper {
-  /* display: flex; 改为默认的块级布局，实现上下排列 */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260rpx, 1fr));
   gap: 20rpx;
-  margin-top: 20rpx;
+  margin-top: 24rpx;
 }
 
 .preview-box {
-  flex: 1;
-  padding: 15rpx;
-  background-color: #f7f7f7;
-  border-radius: 4rpx;
-  min-height: 100rpx;
+  padding: 20rpx;
+  background-color: #f8faf8;
+  border-radius: 16rpx;
+  min-height: 120rpx;
+  border: 1px solid rgba(10, 123, 95, 0.08);
 }
 
 .preview-title {
@@ -58,38 +120,77 @@
   word-wrap: break-word;
 }
 
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(10, 123, 95, 0), rgba(10, 123, 95, 0.2), rgba(10, 123, 95, 0));
+  margin: 40rpx 0 32rpx;
+}
+
+.section-header {
+  margin-bottom: 28rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
 .category-section-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20rpx;
 }
 
 .category-title {
   font-size: 28rpx;
-  font-weight: bold;
-  margin-bottom: 15rpx;
-  padding-left: 10rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+  color: #0a7b5f;
 }
 
 .picker {
   width: 100%;
-  height: 70rpx;
-  line-height: 70rpx;
-  padding: 0 20rpx;
-  border: 1px solid #ddd;
-  border-radius: 8rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 24rpx;
+  border: 2rpx solid rgba(10, 123, 95, 0.15);
+  border-radius: 16rpx;
   box-sizing: border-box;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   text-align: left;
-  font-size: 26rpx;
+  font-size: 28rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: #2f3e36;
+  transition: all 0.3s ease;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.03);
+}
+
+.picker:active {
+  border-color: #0a7b5f;
+  background-color: #f5fbf6;
+  transform: translateY(-2rpx);
+  box-shadow: 0 6rpx 16rpx rgba(10, 123, 95, 0.15);
 }
 
 /* Remove button default styles */
 button::after {
   border: none;
+}
+
+.category {
+  padding: 24rpx 20rpx;
+  background-color: #fafcfa;
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(10, 123, 95, 0.08);
+  transition: all 0.3s ease;
+}
+
+.category:active {
+  background-color: #f5fbf6;
+  border-color: rgba(10, 123, 95, 0.15);
 }
 
 .translate-status {
