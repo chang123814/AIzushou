@@ -144,22 +144,28 @@ Page({
       return;
     }
     this.setData({ translating: true });
-    wx.cloud.callFunction({
-      name: 'translate',
+    const that = this;
+    wx.request({
+      url: 'https://api.qinghanju.xyz/translate',
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/json'
+      },
       data: { text: trimmed },
-      config: { env: 'cloud1-6guzdqjkd69a13fb' }
-    }).then(res => {
-      const translated = (res && res.result && res.result.translated) || '';
-      this.setData({ subject_en: translated });
-      this.updatePrompt();
-    }).catch(err => {
-      console.error('translate fail', err);
-      wx.showToast({ title: '翻译失败，请稍后重试', icon: 'none' });
-      // 回退：保持原有 subject 参与英文拼接
-      this.setData({ subject_en: '' });
-      this.updatePrompt();
-    }).finally(() => {
-      this.setData({ translating: false });
+      success(res) {
+        const translated = (res && res.data && res.data.translated) || '';
+        that.setData({ subject_en: translated });
+        that.updatePrompt();
+      },
+      fail(err) {
+        console.error('translate fail', err);
+        wx.showToast({ title: '翻译失败，请稍后重试', icon: 'none' });
+        that.setData({ subject_en: '' });
+        that.updatePrompt();
+      },
+      complete() {
+        that.setData({ translating: false });
+      }
     });
   },
 });
