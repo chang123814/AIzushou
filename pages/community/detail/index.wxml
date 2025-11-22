@@ -1,0 +1,67 @@
+<view class="page-container">
+  <!-- 问题详情 -->
+  <view class="question-card">
+    <view class="user-info">
+      <image class="avatar" src="{{question.author.avatar}}" mode="aspectFill"></image>
+      <view class="user-meta">
+        <view class="nickname">{{question.author.nickname}}</view>
+        <view class="post-time">{{question.createdAt}}</view>
+      </view>
+    </view>
+    <view class="question-title">{{question.title}}</view>
+    <view class="question-content">{{question.content}}</view>
+    <view class="tag-list">
+      <view class="tag-item" wx:for="{{question.tags}}" wx:key="*this">{{item}}</view>
+    </view>
+    <view class="actions">
+      <view class="action-item {{question.isLiked ? 'active' : ''}}" bindtap="toggleLike">
+        <text>👍 {{question.likeCount}}</text>
+      </view>
+      <view class="action-item {{question.isFavorited ? 'active' : ''}}" bindtap="toggleFavorite">
+        <text>⭐ {{question.favoriteCount}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 回复列表 -->
+  <view class="answers-section">
+    <view class="section-title">全部回复 ({{question.answerCount}})</view>
+    <block wx:for="{{question.answers}}" wx:key="id" wx:for-item="answer">
+      <view class="answer-item">
+        <view class="user-info">
+          <image class="avatar small" src="{{answer.author.avatar}}"></image>
+          <view class="nickname">{{answer.author.nickname}}</view>
+        </view>
+        <view class="answer-content">{{answer.content}}</view>
+        <view class="answer-footer">
+          <view class="post-time">{{answer.createdAt}}</view>
+          <view class="reply-btn">回复</view>
+        </view>
+        <!-- 嵌套回复 -->
+        <view class="nested-answers">
+          <block wx:for="{{answer.children}}" wx:key="id" wx:for-item="childAnswer">
+            <view class="answer-item nested">
+              <view class="user-info">
+                <image class="avatar small" src="{{childAnswer.author.avatar}}"></image>
+                <view class="nickname">{{childAnswer.author.nickname}}</view>
+                <text class="reply-to-text" wx:if="{{childAnswer.replyTo}}">回复</text>
+                <view class="nickname reply-to" wx:if="{{childAnswer.replyTo}}">{{childAnswer.replyTo}}</view>
+              </view>
+              <view class="answer-content">{{childAnswer.content}}</view>
+              <view class="answer-footer">
+                <view class="post-time">{{childAnswer.createdAt}}</view>
+                <view class="reply-btn">回复</view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 底部回复输入框 -->
+  <view class="reply-input-bar">
+    <input class="reply-input" placeholder="写下你的回复..." model:value="{{myReply}}" />
+    <button class="send-btn" type="primary" size="mini" bindtap="submitReply">发送</button>
+  </view>
+</view>

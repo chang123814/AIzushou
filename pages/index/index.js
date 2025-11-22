@@ -146,7 +146,7 @@ Page({
     this.setData({ translating: true });
     const that = this;
     wx.request({
-      url: 'https://api.qinghanju.xyz/translate',
+      url: 'https://www.qinghanju.cn/translate',
       method: 'POST',
       header: {
         'Content-Type': 'application/json'

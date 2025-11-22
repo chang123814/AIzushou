@@ -3,7 +3,7 @@
 <view class="container">
   <view class="page-wrapper">
     <view class="hero-card">
-      <view class="hero-title">AI绘图提示词配置</view>
+      <view class="hero-title">MJ绘画提示词编辑助手</view>
       <view class="hero-subtitle">输入主体与环境，获取专业的中英文提示词</view>
     </view>
 

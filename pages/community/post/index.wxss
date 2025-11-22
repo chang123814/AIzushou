@@ -1,0 +1,59 @@
+/* pages/community/post/index.wxss */
+.page-container {
+  padding: 32rpx;
+  background-color: #f7f8fa;
+  min-height: 100vh;
+}
+
+.form-group {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 32rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.title-input {
+  font-size: 32rpx;
+  font-weight: bold;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.content-textarea {
+  width: 100%;
+  font-size: 28rpx;
+  min-height: 200rpx;
+  line-height: 1.6;
+}
+
+.tag-label {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+}
+
+.tag-input {
+  font-size: 28rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.tag-tip {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 12rpx;
+}
+
+.submit-btn {
+  background-color: #07c160;
+  color: #fff;
+  border-radius: 48rpx;
+  font-weight: bold;
+  margin-top: 40rpx;
+}
+
+.submit-btn[disabled] {
+  background-color: #a0eac8;
+  color: #e0f6eb;
+}

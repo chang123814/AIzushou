@@ -1,0 +1,37 @@
+<!--pages/community/index.wxml-->
+<view class="page-container">
+  <!-- 搜索框 -->
+  <view class="search-bar">
+    <input class="search-input" placeholder="搜索感兴趣的问题" />
+  </view>
+
+  <!-- 排序标签 -->
+  <view class="sort-tabs">
+    <view class="tab-item {{activeTab === 'hot' ? 'active' : ''}}" data-tab="hot" bindtap="switchTab">热门</view>
+    <view class="tab-item {{activeTab === 'new' ? 'active' : ''}}" data-tab="new" bindtap="switchTab">最新</view>
+  </view>
+
+  <!-- 问题列表 -->
+  <view class="question-list">
+    <block wx:for="{{questionList}}" wx:key="id">
+      <view class="question-item-card" bindtap="navigateToDetail" data-id="{{item.id}}">
+        <view class="question-title">{{item.title}}</view>
+        <view class="tags">
+          <view class="tag" wx:for="{{item.tags}}" wx:key="*this" wx:for-item="tag">{{tag}}</view>
+        </view>
+        <view class="meta-info">
+          <view class="stats">
+            <text class="stat-item">👍 {{item.likes}}</text>
+            <text class="stat-item">💬 {{item.answers}}</text>
+          </view>
+          <view class="author-time">{{item.author}} · {{item.timeAgo}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 发布按钮 -->
+  <view class="post-button" bindtap="navigateToPost">
+    <text>+</text>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<view class="page-container">
+  <view class="form-group">
+    <input class="title-input" placeholder="请输入问题标题" model:value="{{title}}" />
+  </view>
+
+  <view class="form-group">
+    <textarea class="content-textarea" placeholder="请详细描述你的问题..." maxlength="-1" auto-height model:value="{{content}}"></textarea>
+  </view>
+
+  <view class="form-group">
+    <view class="tag-label">分类标签</view>
+    <input class="tag-input" placeholder="输入标签，用空格分隔" model:value="{{tags}}" />
+    <view class="tag-tip">好的标签更容易让问题被解答</view>
+  </view>
+
+  <button class="submit-btn" type="primary" bindtap="submitQuestion">发布问题</button>
+</view>
