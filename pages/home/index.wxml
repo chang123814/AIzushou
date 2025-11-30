@@ -1,3 +1,9 @@
+<image class="home-background-image" src="/pages/home/images/top_background.jpeg" mode="aspectFit" style="height: {{windowHeight}}px;"></image>
 <view class="container">
-  <text>首页</text>
+  <view class="page-wrapper">
+    <view class="hero-card">
+      <view class="hero-title">AI绘画提示词配置</view>
+      <view class="hero-subtitle">输入主体与环境，获取专业的中英文提示词</view>
+    </view>
+  </view>
 </view>

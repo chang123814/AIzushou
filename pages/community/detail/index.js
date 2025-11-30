@@ -69,6 +69,15 @@ Page({
       question: mockData
     });
   },
+  
+  // 分享给朋友
+  onShareAppMessage() {
+    const { question } = this.data;
+    return {
+      title: question ? question.title : 'AI绘画提示词社区',
+      path: `/pages/community/detail/index?id=${question ? question.id : ''}`
+    };
+  },
 
   // 预留接口: 切换点赞状态
   toggleLike() {

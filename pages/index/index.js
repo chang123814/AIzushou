@@ -45,6 +45,15 @@ Page({
       'pickerData.parameters': addPlaceholder(parametersData, '请选择AR 比例'),
     });
   },
+  
+  // 分享给朋友
+  onShareAppMessage() {
+    return {
+      title: 'AI绘画提示词配置',
+      path: '/pages/index/index',
+      imageUrl: '/pages/index/images/top_background.jpeg'
+    };
+  },
 
   handleSubjectInput: function (e) {
     const value = e.detail.value;

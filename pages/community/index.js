@@ -48,6 +48,14 @@ Page({
       questionList: mockData
     });
   },
+  
+  // 分享给朋友
+  onShareAppMessage() {
+    return {
+      title: 'AI绘画提示词社区',
+      path: '/pages/community/index'
+    };
+  },
 
   // 切换排序方式
   switchTab(e) {
